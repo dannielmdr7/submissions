@@ -1,0 +1,33 @@
+.nav-bar{
+  background-color: #2188D9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px;
+
+  //TODO: review Roboto font
+  &__title{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: 2%;
+    vertical-align: middle;
+  }
+
+  &__items{
+
+    &__list{
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      gap: 20px;
+      list-style: none;
+
+      &__item{
+        text-decoration: none;
+      }
+    }
+  }
+}
