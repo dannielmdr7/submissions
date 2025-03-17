@@ -15,12 +15,12 @@ interface NavBarItem {
 export class NavBarComponent {
   title = 'ZenduForms';
   navBarOptions: NavBarItem[] = [
-    { name: 'Forms', icon: '' },
-    { name: 'Customers', icon: '' },
-    { name: 'Submissions', icon: '' },
-    { name: 'History', icon: '' },
-    { name: 'Reports', icon: '' },
-    { name: 'Workflow', icon: '' }
+    { name: 'Forms', icon: 'forms-icon.svg' },
+    { name: 'Customers', icon: 'customers-icon.svg' },
+    { name: 'Submissions', icon: 'submissions-icon.svg' },
+    { name: 'History', icon: 'history-icon.svg' },
+    { name: 'Reports', icon: 'reports-icon.svg' },
+    { name: 'Workflow', icon: 'reports-icon.svg' }
   ]
 
 }

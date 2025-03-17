@@ -1,10 +1,21 @@
 .nav-item{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0px 16px;
   color: white;
-  //TODO:review Font family
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0%;
   vertical-align: middle;
+
+
+  &__icon{
+    width: 18px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 3px;
+  }
 }

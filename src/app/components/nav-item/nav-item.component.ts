@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class NavItemComponent {
   @Input({ required: true }) name: string = '';
+  @Input({ required: true }) iconName: string = '';
 
 }

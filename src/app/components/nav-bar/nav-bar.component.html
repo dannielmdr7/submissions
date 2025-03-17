@@ -5,13 +5,13 @@
   <div class="nav-bar__items">
     <ul class="nav-bar__items__list">
       @for (item of navBarOptions; track $index) {
-        <app-nav-item [name]="item.name"></app-nav-item>
+      <app-nav-item [name]="item.name" [iconName]="item.icon"></app-nav-item>
 
       }
     </ul>
   </div>
   <div class="nav-bar__actions">
-    <span>option 1</span>
-    <span>option 2</span>
+    <img class="nav-item__icon" src="bell.svg" alt="logo">
+    <img class="nav-item__icon" src="out.svg" alt="logo">
   </div>
 </div>
