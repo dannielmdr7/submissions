@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { SubmissionsService } from '../../services/submissions.service';
 
 @Component({
   selector: 'app-actions-view',
@@ -27,14 +28,11 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './actions-view.component.scss'
 })
 export class ActionsViewComponent {
-  forms = ['Form 1', 'Form 2', 'Form 3'];
-  statuses = ['Pending', 'Approved', 'Rejected'];
-  view = 'list'; // Valor inicial del toggle (list/map)
-  hideSingleSelectionIndicator = signal(false);
+  submissionService = inject(SubmissionsService);
+
 
   onToggleChange(event: any) {
-    console.log('Daniel', { event });
-
+    this.submissionService.setTypeOfView(event.value);
   }
 
 }

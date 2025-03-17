@@ -42,16 +42,14 @@
   </div>
   <div class="actions-view-component__rigth-options">
     <mat-button-toggle-group
-      name="favoriteColor"
-      aria-label="Favorite Color"
-      [hideSingleSelectionIndicator]="hideSingleSelectionIndicator()"
       class="actions-view-component__rigth-options__toggle-group"
       (change)="onToggleChange($event)"
     >
       <mat-button-toggle value="map"
+      [class.mat-button-toggle-checked]="submissionService.typeOfView() === 'map'"
         >Map</mat-button-toggle
       >
-      <mat-button-toggle value="list">List</mat-button-toggle>
+      <mat-button-toggle value="list" [class.mat-button-toggle-checked]="submissionService.typeOfView() === 'list'" >List</mat-button-toggle>
     </mat-button-toggle-group>
 
     <button

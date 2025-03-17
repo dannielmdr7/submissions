@@ -25,8 +25,15 @@ export interface Submission {
 })
 export class SubmissionsService  {
   private _submissions = signal<Submission[]>([]);
+  private _typeOfView = signal<string>('list');
   submissions = computed(() => this._submissions());
+  typeOfView = computed(() => this._typeOfView());
+
   constructor() {
     this._submissions.set(data);
+  }
+
+  setTypeOfView(type: string) {
+    this._typeOfView.set(type);
   }
 }
