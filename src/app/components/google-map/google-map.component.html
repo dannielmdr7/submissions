@@ -1,2 +1,7 @@
-<h1>map works</h1>
-<google-map width="750px" height="400px" [center]="center()" [zoom]="zoom()" />
+<google-map mapId="14c7b80dad1df46c" width="750px" height="400px" [center]="center()" [zoom]="zoom()">
+  @for (item of locations; track $index) {
+    <map-advanced-marker
+    [position]="{lat: item.lat, lng: item.lng}"
+    />
+  }
+</google-map>
