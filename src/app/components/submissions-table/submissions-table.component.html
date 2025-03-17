@@ -1,0 +1,62 @@
+<div class="submissions-table__container">
+  <table
+    class="submissions-table__container__table"
+    mat-table
+    [dataSource]="dataSource"
+  >
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox> </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox
+          (click)="$event.stopPropagation()"
+          [(ngModel)]="row.selected"
+        ></mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="task">
+      <th mat-header-cell *matHeaderCellDef>Task</th>
+      <td mat-cell *matCellDef="let row">{{ row.task }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let row">
+        <app-status-handler [status]="row.status"></app-status-handler>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="from">
+      <th mat-header-cell *matHeaderCellDef>From</th>
+      <td mat-cell *matCellDef="let row">{{ row.from }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef>To</th>
+      <td mat-cell *matCellDef="let row">{{ row.to }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Customer Address</th>
+      <td mat-cell *matCellDef="let row">{{ row.address }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef>Due Date</th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.dueDate }}
+      </td>
+    </ng-container>
+  </table>
+
+  <mat-paginator
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 20]"
+    aria-label="Select page"
+  ></mat-paginator>
+</div>

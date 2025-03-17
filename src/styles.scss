@@ -1,4 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  @include mat.table-overrides((
+    header-headline-size: 16px,
+    header-headline-weight:700,
+    header-headline-line-height:140%
+  ));
+}
+
+.mdc-checkbox__background{
+  background: #FFFFFF !important ;
+  border: 1px solid #B8B9BC !important;
+}
 
 .mat-button-toggle-checked{
   background-color: #2188D9 !important;

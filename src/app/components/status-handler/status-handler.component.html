@@ -1,0 +1,27 @@
+<div class="status-handler">
+  @switch (status) { @case (statusEnum.LowRisk) {
+  <div class="status-handler__container-low-risk">
+    <div class="status-handler__container-low-risk__round"></div>
+    <span class="status-handler__container-low-risk__text"> {{ status }} </span>
+  </div>
+  } @case (statusEnum.Unassigned) {
+  <div class="status-handler__container-unassigned">
+    <div class="status-handler__container-unassigned__round"></div>
+    <span class="status-handler__container-unassigned__text">
+      {{ status }}
+    </span>
+  </div>
+  } @case (statusEnum.Uncomplete) {
+  <div class="status-handler__container-uncomplete">
+    <div class="status-handler__container-uncomplete__round"></div>
+    <span class="status-handler__container-uncomplete__text">
+      {{ status }}
+    </span>
+  </div>
+  } @default {
+  <div class="status-handler__container-low-risk">
+    <div class="status-handler__container-low-risk__round"></div>
+    <span class="status-handler__container-low-risk__text"> {{ status }} </span>
+  </div>
+  } }
+</div>
