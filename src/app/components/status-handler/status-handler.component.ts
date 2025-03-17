@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { StatusEnum } from '../submissions-table/submissions-table.component';
+import { StatusEnum } from '../../services/submissions.service';
 
 @Component({
   selector: 'app-status-handler',
