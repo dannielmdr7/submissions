@@ -1,0 +1,66 @@
+.actions-view-component {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+
+  &__left-options {
+    grid-column:span 10;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    &__search-field {
+      width: 334px;
+      height: 48px;
+      border-radius: 4px;
+      border-width: 1px;
+    }
+
+    &__dropdown-form {
+      width: 334px;
+      height: 48px;
+      border-radius: 4px;
+      border-width: 1px;
+    }
+
+    &__dropdown-status {
+      width: 334px;
+      height: 48px;
+      border-radius: 4px;
+      border-width: 1px;
+    }
+
+    &__date-picker {
+      width: 334px;
+      height: 48px;
+      border-radius: 4px;
+      border-width: 1px;
+    }
+  }
+  &__rigth-options {
+    grid-column:span 2;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+
+    &__toggle-group {
+      height: 48px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      .toggle-button {
+        &.mat-button-toggle-checked {
+          background-color: red; // Color de fondo para la opción seleccionada
+          color: white; // Color del texto para la opción seleccionada
+        }
+      }
+    }
+
+    &__export-button {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

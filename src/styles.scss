@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+.mat-button-toggle-checked{
+  background-color: #2188D9 !important;
+  color: white !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.mat-button-toggle-checkbox-wrapper{
+  display: none !important;
+}

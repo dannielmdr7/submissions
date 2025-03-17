@@ -1,0 +1,17 @@
+.layout-component {
+  &__content {
+    margin: 0px 40px;
+    &__title {
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 140%;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+    &__actions-view-container {
+    }
+    &__render-content-container {
+    }
+  }
+}
