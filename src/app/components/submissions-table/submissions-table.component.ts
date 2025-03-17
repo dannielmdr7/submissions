@@ -38,9 +38,21 @@ export class SubmissionsTableComponent {
     this.dataSource.paginator = this.paginator;
   }
 
-  // Verificar si la fecha está vencida
   isPastDue(date: string): boolean {
-    return new Date(date) < new Date();
+    return new Date(date) > new Date();
+  }
+
+  formatPastDue(dateString: string): string {
+    const date = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = {
+      month: 'short', // Abreviatura del mes (e.g., "Oct")
+      day: 'numeric', // Día del mes (e.g., "17")
+      hour: 'numeric', // Hora (e.g., "5")
+      minute: 'numeric', // Minutos (e.g., "39")
+      hour12: true // Formato de 12 horas con AM/PM
+    };
+
+    return date.toLocaleString('en-US', options);
   }
 }
 

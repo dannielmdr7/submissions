@@ -1,5 +1,13 @@
 .submissions-table__container {
   margin-top: 30px;
+  td {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
   &__table {
     font-size: 1px;
     width: 100%;
@@ -7,32 +15,17 @@
     height: 480;
     top: 261px;
     left: 40px;
-    border: 1px solid #ECECED;
+    border: 1px solid #ececed;
     border-radius: 8px;
     border-width: 1px;
-    box-shadow: 0px 2px 10px 0px #060C1B1A;
+    box-shadow: 0px 2px 10px 0px #060c1b1a;
     background-color: white;
+
+    &__due-date {
+      color: red;
+      font-weight: 500;
+      font-size: 16px;
+      white-space: nowrap;
+    }
   }
 }
-// .table-container {
-//   width: 100%;
-//   background-color: aqua;
-//   padding: 10px;
-// }
-
-// th {
-//   background: blue;
-//   font-weight: bold;
-// }
-
-// .due-date-alert {
-//   color: red;
-//   font-weight: bold;
-// }
-
-// mat-chip {
-//   font-weight: bold;
-//   padding: 5px 10px;
-//   border-radius: 5px;
-//   color: white;
-// }
