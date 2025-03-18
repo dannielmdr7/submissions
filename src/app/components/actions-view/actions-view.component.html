@@ -5,7 +5,7 @@
       class="actions-view-component__left-options__search-field"
     >
       <mat-icon matPrefix>search</mat-icon>
-      <input (input)="(onChangeSearch($event))" matInput placeholder="Search" />
+      <input (input)="onChangeSearch($event)" matInput placeholder="Search" />
     </mat-form-field>
 
     <mat-form-field
@@ -23,10 +23,10 @@
       appearance="outline"
       class="actions-view-component__left-options__dropdown-status"
     >
-      <mat-select placeholder="Select Status">
-        <mat-option *ngFor="let status of statuses" [value]="status">{{
-          status
-        }}</mat-option>
+      <mat-select placeholder="Select Status" (selectionChange)="onChangeSelectStaus($event)">
+        @for (item of statuses; track $index) {
+        <mat-option [value]="item.status">{{ item.value }}</mat-option>
+        }
       </mat-select>
     </mat-form-field>
 
@@ -34,11 +34,13 @@
       appearance="outline"
       class="actions-view-component__left-options__date-picker"
     >
-      <mat-icon matPrefix>event</mat-icon>
-      <input matInput [matDatepicker]="picker" placeholder="Select Date" />
+      <input (dateChange)="onChangeDate($event)" matInput [matDatepicker]="picker"  placeholder="Select Date" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+
+
+
   </div>
   <div class="actions-view-component__rigth-options">
     <mat-button-toggle-group

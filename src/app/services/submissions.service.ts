@@ -26,6 +26,9 @@ export interface Submission {
 export class SubmissionsService {
   private _submissions = signal<Submission[]>([]);
   private _typeOfView = signal<string>('list');
+  private filterValue = '';
+  private statusValue = ''
+  private dateValue = ''
   submissions = computed(() => this._submissions());
   typeOfView = computed(() => this._typeOfView());
 
@@ -38,13 +41,34 @@ export class SubmissionsService {
   }
 
   filterByName(name: string) {
-    if (!name.trim()) {
-      this._submissions.set(data);
-      return;
-    }
+    this.filterValue = name;
+    this.handleFilters()
+  }
+
+  filterByStatus(status: StatusEnum) {
+    this.statusValue = status;
+    this.handleFilters()
+  }
+
+  filterByDate(date: string) {
+    this.dateValue = date;
+    this.handleFilters()
+  }
+
+  handleFilters() {
     this._submissions.set(data);
-    const regex = new RegExp(name, "i");
-    const filteredDate = this._submissions().filter(item => regex.test(item.task));
-    this._submissions.set(filteredDate);
+    const filteredData = this._submissions().filter(item => {
+      if (this.filterValue === '') return true;
+      const regex = new RegExp(this.filterValue, "i");
+      return regex.test(item.task)
+    }).filter(item => {
+      if (this.statusValue === '') return true;
+      return item.status === this.statusValue;
+    }).filter((item) => {
+      if (this.dateValue === '')return true;
+      return new Date(item.dueDate) > new Date(this.dateValue)
+    })
+    this._submissions.set(filteredData);
+
   }
 }

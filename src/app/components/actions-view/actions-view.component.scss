@@ -50,12 +50,7 @@
       border-radius: 5px;
       display: flex;
       align-items: center;
-      .toggle-button {
-        &.mat-button-toggle-checked {
-          background-color: red; // Color de fondo para la opción seleccionada
-          color: white; // Color del texto para la opción seleccionada
-        }
-      }
+
     }
 
     &__export-button {
