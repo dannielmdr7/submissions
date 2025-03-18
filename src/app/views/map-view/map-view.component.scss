@@ -1,16 +1,22 @@
 .map-view__container {
   margin-top: 30px;
   width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  max-height: 50%;
+  overflow: hidden;
 
-  &__list-container{
-    grid-column:span 4;
-
+  &__list-container {
+    grid-column: span 4;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: calc(70vh);
+    overflow: scroll;
   }
-  &__map-container{
-    grid-column:span 8;
-
+  &__map-container {
+    grid-column: span 8;
+    height: calc(70vh);
   }
 }

@@ -16,8 +16,8 @@ export interface Submission {
   address: string;
   dueDate: string;
   selected: boolean;
-  latitude?: number;
-  longitude?: number;
+  latitude: number;
+  longitude: number;
 }
 
 @Injectable({

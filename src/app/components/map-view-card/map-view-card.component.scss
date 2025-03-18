@@ -1,0 +1,48 @@
+.map-view-card__container {
+  background: #ffffff;
+  border: 1px solid #b8b9bc;
+  border-radius: 4px;
+  padding: 8px 16px;
+  overflow: hidden;
+
+  &__heading {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &__name {
+      grid-column: span 8;
+      font-family: Roboto;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 140%;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+
+    &__status {
+      grid-column: span 4;
+    }
+  }
+
+  &__description {
+    &__submission-item {
+      &__key {
+        color: #b8b9bc;
+        font-family: Roboto;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+      }
+      &__value {
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+      }
+    }
+  }
+}
