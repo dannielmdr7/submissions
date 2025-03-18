@@ -1,4 +1,4 @@
-import { Component, effect, inject, ViewChild } from '@angular/core';
+import { Component, effect, inject, ViewChild, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -26,7 +26,7 @@ import { SubmissionsService } from '../../services/submissions.service';
   templateUrl: './list-view.component.html',
   styleUrl: './list-view.component.scss'
 })
-export class ListViewComponent {
+export class ListViewComponent implements AfterViewInit {
   submissionService = inject(SubmissionsService)
 
   displayedColumns: string[] = ['select', 'task', 'status', 'from', 'to', 'address', 'dueDate'];

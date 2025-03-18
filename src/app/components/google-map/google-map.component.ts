@@ -1,8 +1,8 @@
-import { Component, effect, inject, OnInit, signal } from '@angular/core';
-import { GoogleMap, MapAdvancedMarker } from '@angular/google-maps';
-import { SubmissionsService } from '../../services/submissions.service';
-import { FocusMapService } from '../../services/focus-map.service';
 import { CommonModule } from '@angular/common';
+import { Component, inject, signal } from '@angular/core';
+import { GoogleMap, MapAdvancedMarker } from '@angular/google-maps';
+import { FocusMapService } from '../../services/focus-map.service';
+import { SubmissionsService } from '../../services/submissions.service';
 
 @Component({
   selector: 'app-google-map',

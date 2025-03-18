@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './nav-item.component.scss'
 })
 export class NavItemComponent {
-  @Input({ required: true }) name: string = '';
-  @Input({ required: true }) iconName: string = '';
+  @Input({ required: true }) name = '';
+  @Input({ required: true }) iconName = '';
 
 }

@@ -1,12 +1,12 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatButtonToggleChange, MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerInputEvent, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { StatusEnum, SubmissionsService } from '../../services/submissions.service';
 
@@ -40,7 +40,7 @@ export class ActionsViewComponent {
   ]
 
 
-  onToggleChange(event: any) {
+  onToggleChange(event: MatButtonToggleChange) {
     this.submissionService.setTypeOfView(event.value);
   }
 
@@ -50,14 +50,15 @@ export class ActionsViewComponent {
     this.submissionService.filterByName(target.value);
   }
 
-  onChangeSelectStaus(event: MatSelectChange<any>) {
+  onChangeSelectStaus(event: MatSelectChange<StatusEnum>) {
     const status = event.value;
     this.submissionService.filterByStatus(status);
   }
 
-  onChangeDate(event:MatDatepickerInputEvent<any, any>){
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChangeDate(event: MatDatepickerInputEvent<any, any>) {
     this.submissionService.filterByDate(event.value);
-    console.log('Daniel',{event});
+    console.log('Daniel', { event });
   }
 
 }
