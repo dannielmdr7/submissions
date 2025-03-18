@@ -1,6 +1,6 @@
+<app-nav-bar></app-nav-bar>
 <div class="layout-component">
-  <app-nav-bar></app-nav-bar>
-  <div class="layout-component__content">
+  <div class="layout-component__content" >
     <h1 class="layout-component__content__title">Submissions</h1>
     <div class="layout-component__content__actions-view-container">
       <app-actions-view></app-actions-view>
@@ -9,7 +9,7 @@
       @if (submissionService.typeOfView() === 'list') {
         <app-list-view></app-list-view>
       }@else {
-        <h1>mapa</h1>
+        <app-map-view></app-map-view>
       }
     </div>
   </div>
