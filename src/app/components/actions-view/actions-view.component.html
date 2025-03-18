@@ -5,7 +5,7 @@
       class="actions-view-component__left-options__search-field"
     >
       <mat-icon matPrefix>search</mat-icon>
-      <input matInput placeholder="Search" />
+      <input (input)="(onChangeSearch($event))" matInput placeholder="Search" />
     </mat-form-field>
 
     <mat-form-field
@@ -45,11 +45,20 @@
       class="actions-view-component__rigth-options__toggle-group"
       (change)="onToggleChange($event)"
     >
-      <mat-button-toggle value="map"
-      [class.mat-button-toggle-checked]="submissionService.typeOfView() === 'map'"
+      <mat-button-toggle
+        value="map"
+        [class.mat-button-toggle-checked]="
+          submissionService.typeOfView() === 'map'
+        "
         >Map</mat-button-toggle
       >
-      <mat-button-toggle value="list" [class.mat-button-toggle-checked]="submissionService.typeOfView() === 'list'" >List</mat-button-toggle>
+      <mat-button-toggle
+        value="list"
+        [class.mat-button-toggle-checked]="
+          submissionService.typeOfView() === 'list'
+        "
+        >List</mat-button-toggle
+      >
     </mat-button-toggle-group>
 
     <button

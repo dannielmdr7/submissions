@@ -6,7 +6,11 @@
       <app-actions-view></app-actions-view>
     </div>
     <div class="layout-component__content__render-content-container">
-      <app-submissions-table></app-submissions-table>
+      @if (submissionService.typeOfView() === 'list') {
+        <app-submissions-table></app-submissions-table>
+      }@else {
+        <h1>mapa</h1>
+      }
     </div>
   </div>
 </div>

@@ -35,4 +35,10 @@ export class ActionsViewComponent {
     this.submissionService.setTypeOfView(event.value);
   }
 
+  onChangeSearch(event:Event){
+    if (!event.target) return;
+    const target = event.target as HTMLInputElement;
+    this.submissionService.filterByName(target.value);
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, effect, inject, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -31,6 +31,11 @@ export class SubmissionsTableComponent {
 
   displayedColumns: string[] = ['select', 'task', 'status', 'from', 'to', 'address', 'dueDate'];
   dataSource = new MatTableDataSource(this.submissionService.submissions());
+  constructor() {
+    effect(() => {
+      this.dataSource = new MatTableDataSource(this.submissionService.submissions());
+    })
+  }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

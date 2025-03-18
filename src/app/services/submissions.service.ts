@@ -23,7 +23,7 @@ export interface Submission {
 @Injectable({
   providedIn: 'root'
 })
-export class SubmissionsService  {
+export class SubmissionsService {
   private _submissions = signal<Submission[]>([]);
   private _typeOfView = signal<string>('list');
   submissions = computed(() => this._submissions());
@@ -35,5 +35,16 @@ export class SubmissionsService  {
 
   setTypeOfView(type: string) {
     this._typeOfView.set(type);
+  }
+
+  filterByName(name: string) {
+    if (!name.trim()) {
+      this._submissions.set(data);
+      return;
+    }
+    this._submissions.set(data);
+    const regex = new RegExp(name, "i");
+    const filteredDate = this._submissions().filter(item => regex.test(item.task));
+    this._submissions.set(filteredDate);
   }
 }

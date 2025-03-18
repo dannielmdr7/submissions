@@ -47,5 +47,104 @@ export const data:Submission[] = [
     "longitude": -76.5554081712328,
     status: StatusEnum.Uncomplete,
     selected: false
-  }
+  },
+  {
+    "task": "Mr. Randall Kshlerin",
+    "from": "Ramon Rosenbaum I",
+    "to": "Cecil Zulauf",
+    "address": "3560 Kertzmann Harbor",
+    "dueDate": "Oct 17 2024 17:39:38 GMT-0500",
+    "latitude": 2.4202294071065262,
+    "longitude": -76.55165647223289,
+    status: StatusEnum.LowRisk,
+    selected: false
+  },
+  {
+    "task": "Rita Steuber",
+    "from": "Sidney Corkery",
+    "to": "Lewis Watsica",
+    "address": "7505 Trisha Squares",
+    "dueDate": "Mar 16 2025 12:30:38 GMT-0500",
+    "latitude": 2.442448075385066,
+    "longitude": -76.5046152051834,
+    status: StatusEnum.Unassigned,
+    selected: false
+  },
+  {
+    "task": "Mr. Kerry Walker",
+    "from": "Anthony Cummerata PhD",
+    "to": "Gerard Cartwright Jr.",
+    "address": "87962 Vella Drive",
+    "dueDate": "Apr 17 2025 7:08:38 GMT-0500",
+    "latitude": 2.497729343618965,
+    "longitude": -76.5554081712328,
+    status: StatusEnum.Uncomplete,
+    selected: false
+  },
+  {
+    "task": "Mr. Randall Kshlerin",
+    "from": "Ramon Rosenbaum I",
+    "to": "Cecil Zulauf",
+    "address": "3560 Kertzmann Harbor",
+    "dueDate": "Oct 17 2024 17:39:38 GMT-0500",
+    "latitude": 2.4202294071065262,
+    "longitude": -76.55165647223289,
+    status: StatusEnum.LowRisk,
+    selected: false
+  },
+  {
+    "task": "Rita Steuber",
+    "from": "Sidney Corkery",
+    "to": "Lewis Watsica",
+    "address": "7505 Trisha Squares",
+    "dueDate": "Mar 16 2025 12:30:38 GMT-0500",
+    "latitude": 2.442448075385066,
+    "longitude": -76.5046152051834,
+    status: StatusEnum.Unassigned,
+    selected: false
+  },
+  {
+    "task": "Mr. Kerry Walker",
+    "from": "Anthony Cummerata PhD",
+    "to": "Gerard Cartwright Jr.",
+    "address": "87962 Vella Drive",
+    "dueDate": "Apr 17 2025 7:08:38 GMT-0500",
+    "latitude": 2.497729343618965,
+    "longitude": -76.5554081712328,
+    status: StatusEnum.Uncomplete,
+    selected: false
+  },
+  {
+    "task": "Mr. Randall Kshlerin",
+    "from": "Ramon Rosenbaum I",
+    "to": "Cecil Zulauf",
+    "address": "3560 Kertzmann Harbor",
+    "dueDate": "Oct 17 2024 17:39:38 GMT-0500",
+    "latitude": 2.4202294071065262,
+    "longitude": -76.55165647223289,
+    status: StatusEnum.LowRisk,
+    selected: false
+  },
+  {
+    "task": "Rita Steuber",
+    "from": "Sidney Corkery",
+    "to": "Lewis Watsica",
+    "address": "7505 Trisha Squares",
+    "dueDate": "Mar 16 2025 12:30:38 GMT-0500",
+    "latitude": 2.442448075385066,
+    "longitude": -76.5046152051834,
+    status: StatusEnum.Unassigned,
+    selected: false
+  },
+  {
+    "task": "Mr. Kerry Walker",
+    "from": "Anthony Cummerata PhD",
+    "to": "Gerard Cartwright Jr.",
+    "address": "87962 Vella Drive",
+    "dueDate": "Apr 17 2025 7:08:38 GMT-0500",
+    "latitude": 2.497729343618965,
+    "longitude": -76.5554081712328,
+    status: StatusEnum.Uncomplete,
+    selected: false
+  },
 ]
