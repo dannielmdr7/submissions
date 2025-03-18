@@ -1,4 +1,4 @@
-import { Component, effect, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, effect, inject, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -7,10 +7,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { StatusHandlerComponent } from '../status-handler/status-handler.component';
+import { StatusHandlerComponent } from '../../components/status-handler/status-handler.component';
 import { SubmissionsService } from '../../services/submissions.service';
+
 @Component({
-  selector: 'app-submissions-table',
+  selector: 'app-list-view',
   imports: [
     FormsModule,
     MatButtonModule,
@@ -22,12 +23,11 @@ import { SubmissionsService } from '../../services/submissions.service';
     MatTableModule,
     StatusHandlerComponent
   ],
-  templateUrl: './submissions-table.component.html',
-  styleUrl: './submissions-table.component.scss'
+  templateUrl: './list-view.component.html',
+  styleUrl: './list-view.component.scss'
 })
-
-export class SubmissionsTableComponent {
-  submissionService  = inject(SubmissionsService)
+export class ListViewComponent {
+  submissionService = inject(SubmissionsService)
 
   displayedColumns: string[] = ['select', 'task', 'status', 'from', 'to', 'address', 'dueDate'];
   dataSource = new MatTableDataSource(this.submissionService.submissions());
@@ -50,14 +50,14 @@ export class SubmissionsTableComponent {
   formatPastDue(dateString: string): string {
     const date = new Date(dateString);
     const options: Intl.DateTimeFormatOptions = {
-      month: 'short', // Abreviatura del mes (e.g., "Oct")
-      day: 'numeric', // Día del mes (e.g., "17")
-      hour: 'numeric', // Hora (e.g., "5")
-      minute: 'numeric', // Minutos (e.g., "39")
-      hour12: true // Formato de 12 horas con AM/PM
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true
     };
 
     return date.toLocaleString('en-US', options);
   }
-}
 
+}
