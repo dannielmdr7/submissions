@@ -2,7 +2,7 @@
   mapId="14c7b80dad1df46c"
   width="100%"
   height="100%"
-  [center]="center()"
+  [center]="focusMapService.center()"
   [zoom]="zoom()"
 >
   @for (item of submissionService.submissions(); track $index) {

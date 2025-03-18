@@ -1,4 +1,4 @@
-<div class="map-view-card__container" >
+<div class="map-view-card__container" (click)="onClick()"  >
   <div class="map-view-card__container__heading">
     <span class="map-view-card__container__heading__name"> {{submission.task}} </span>
     <app-status-handler class="map-view-card__container__heading__status" [status]="submission.status" />

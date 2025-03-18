@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { FocusMapService } from '../../services/focus-map.service';
 import { Submission } from '../../services/submissions.service';
 import { StatusHandlerComponent } from "../status-handler/status-handler.component";
 
@@ -10,5 +11,10 @@ import { StatusHandlerComponent } from "../status-handler/status-handler.compone
   styleUrl: './map-view-card.component.scss'
 })
 export class MapViewCardComponent {
+  focusMapService = inject(FocusMapService)
   @Input({ required: true }) submission!: Submission;
+
+  onClick() {
+    this.focusMapService.setFocus(this.submission.latitude, this.submission.longitude)
+  }
 }
