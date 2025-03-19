@@ -16,7 +16,6 @@
   }
 
   &__items{
-
     &__list{
       display: flex;
       justify-content: space-between;
@@ -33,5 +32,34 @@
   &__actions{
     display: flex;
     gap: 16px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .nav-bar{
+    &__items{
+      &__list{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        &__item {
+          grid-column: span 4;
+        }
+
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .nav-bar{
+    &__items{
+      &__list{
+        display: grid ;
+        grid-template-columns: repeat(12, 1fr);
+        &__item {
+          grid-column: span 6;
+        }
+
+      }
+    }
   }
 }

@@ -5,7 +5,7 @@
   <div class="nav-bar__items">
     <ul class="nav-bar__items__list">
       @for (item of navBarOptions; track $index) {
-      <app-nav-item [name]="item.name" [iconName]="item.icon"></app-nav-item>
+      <app-nav-item class="nav-bar__items__list__item" [name]="item.name" [iconName]="item.icon"></app-nav-item>
 
       }
     </ul>
