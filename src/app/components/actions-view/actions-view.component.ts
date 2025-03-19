@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { StatusEnum, SubmissionsService } from '../../services/submissions.service';
-
+import Swal from 'sweetalert2'
 interface SelectStatusEnum {
   value: string;
   status: StatusEnum;
@@ -58,7 +58,33 @@ export class ActionsViewComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChangeDate(event: MatDatepickerInputEvent<any, any>) {
     this.submissionService.filterByDate(event.value);
-    console.log('Daniel', { event });
+  }
+
+  downloadSubmissions() {
+    let timerInterval: ReturnType<typeof setInterval>;
+    Swal.fire({
+      title: "Downloading submissions",
+      html: "Remaining Time <b></b> milliseconds.",
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const popup = Swal.getPopup();
+        const timer = popup ? popup.querySelector("b") : null;
+        if (timer) {
+          timerInterval = setInterval(() => {
+            timer.textContent = `${Swal.getTimerLeft()}`;
+          }, 100);
+        }
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      }
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("I was closed by the timer");
+      }
+    });
   }
 
 }
