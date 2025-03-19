@@ -1,13 +1,13 @@
-.nav-bar{
-  background-color: #2188D9;
+.nav-bar {
+  background-color: #2188d9;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 32px;
 
-  &__title{
+  &__title {
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 32px;
     line-height: 130%;
@@ -15,50 +15,54 @@
     vertical-align: middle;
   }
 
-  &__items{
-    &__list{
+  &__items {
+    &__list {
       display: flex;
       justify-content: space-between;
       text-decoration: none;
       gap: 20px;
       list-style: none;
 
-      &__item{
+      &__item {
         text-decoration: none;
+      }
+      &__item:hover {
+        text-decoration: underline;
+        text-decoration-color: blue;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
       }
     }
   }
 
-  &__actions{
+  &__actions {
     display: flex;
     gap: 16px;
   }
 }
 
 @media (max-width: 1300px) {
-  .nav-bar{
-    &__items{
-      &__list{
+  .nav-bar {
+    &__items {
+      &__list {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         &__item {
           grid-column: span 4;
         }
-
       }
     }
   }
 }
 @media (max-width: 900px) {
-  .nav-bar{
-    &__items{
-      &__list{
-        display: grid ;
+  .nav-bar {
+    &__items {
+      &__list {
+        display: grid;
         grid-template-columns: repeat(12, 1fr);
         &__item {
           grid-column: span 6;
         }
-
       }
     }
   }
