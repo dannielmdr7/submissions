@@ -28,6 +28,7 @@ import { SubmissionsService } from '../../services/submissions.service';
 })
 export class ListViewComponent implements AfterViewInit {
   submissionService = inject(SubmissionsService)
+  readonly isChecked = false;
 
   displayedColumns: string[] = ['select', 'task', 'status', 'from', 'to', 'address', 'dueDate'];
   dataSource = new MatTableDataSource(this.submissionService.submissions());
@@ -58,6 +59,11 @@ export class ListViewComponent implements AfterViewInit {
     };
 
     return date.toLocaleString('en-US', options);
+  }
+
+  checkAllSubmissions() {
+    this.submissionService.toggleData(!this.isChecked)
+
   }
 
 }

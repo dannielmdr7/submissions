@@ -9,6 +9,7 @@ export enum StatusEnum {
 }
 
 export interface Submission {
+  id:number;
   task: string;
   status: StatusEnum;
   from: string;
@@ -25,7 +26,7 @@ export interface Submission {
 })
 export class SubmissionsService {
   private _submissions = signal<Submission[]>([]);
-  private _typeOfView = signal<string>('map');
+  private _typeOfView = signal<string>('list');
   private filterValue = '';
   private statusValue = ''
   private dateValue = ''
@@ -69,6 +70,14 @@ export class SubmissionsService {
       return new Date(item.dueDate) > new Date(this.dateValue)
     })
     this._submissions.set(filteredData);
-
   }
+
+  toggleData(status:boolean) {
+    const toggledData = this._submissions().map(item => ({
+      ...item,
+      selected: status
+    }));
+    this._submissions.set(toggledData);
+  }
+
 }

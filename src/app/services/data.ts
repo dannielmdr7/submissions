@@ -4,6 +4,7 @@
   Uncomplete = 'Uncomplete',
 }
  interface Submission {
+  id:number;
   task: string;
   status: StatusEnum;
   from: string;
@@ -16,6 +17,7 @@
 }
 export const data:Submission[] = [
   {
+    id:1,
     "task": "Mr. Randall Kshlerin",
     "from": "Ramon Rosenbaum I",
     "to": "Cecil Zulauf",
@@ -24,9 +26,10 @@ export const data:Submission[] = [
     "latitude": 40.42022,
     "longitude": -76.55165647223289,
     status: StatusEnum.LowRisk,
-    selected: false
+    selected: true
   },
   {
+    id:2,
     "task": "Rita Steuber",
     "from": "Sidney Corkery",
     "to": "Lewis Watsica",
@@ -38,6 +41,7 @@ export const data:Submission[] = [
     selected: false
   },
   {
+    id:3,
     "task": "Mr. Kerry Walker",
     "from": "Anthony Cummerata PhD",
     "to": "Gerard Cartwright Jr.",
