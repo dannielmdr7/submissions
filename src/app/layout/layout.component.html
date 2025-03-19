@@ -6,10 +6,21 @@
       <app-actions-view></app-actions-view>
     </div>
     <div class="layout-component__content__render-content-container">
-      @if (submissionService.typeOfView() === 'list') {
-        <app-list-view></app-list-view>
+      @if (submissionService.submissions().length > 0) {
+        @if (submissionService.typeOfView() === 'list') {
+          <app-list-view></app-list-view>
+        }@else {
+          <app-map-view></app-map-view>
+        }
       }@else {
-        <app-map-view></app-map-view>
+        <div class="empty-state" >
+          <div class="empty-state__message-container">
+            <div class="empty-state__message-container__icon">!</div>
+            <div class="empty-state__message-container__message-text">
+              There are no submissions that match your filters, please adjust their values.
+            </div>
+          </div>
+        </div>
       }
     </div>
   </div>
