@@ -15,7 +15,11 @@
 
     <div class="map-view-card__container__description__submission-item">
       <span class="map-view-card__container__description__submission-item__key"> Due Date : </span>
-      <span class="map-view-card__container__description__submission-item__value"> {{submission.dueDate}} </span>
+      <span
+      [class.past-due-date]="
+            !isPastDue(submission.dueDate)
+          "
+      class="map-view-card__container__description__submission-item__value"> {{formatDate(submission.dueDate)}} </span>
     </div>
 
   </div>

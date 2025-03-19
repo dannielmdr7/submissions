@@ -17,4 +17,18 @@ export class MapViewCardComponent {
   onClick() {
     this.focusMapService.setFocus(this.submission.latitude, this.submission.longitude)
   }
+
+  isPastDue(date: string): boolean {
+    return new Date(date) > new Date();
+  }
+
+  formatDate(dateString: string) {
+    const date = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = {
+      day: 'numeric',
+      month: 'long'
+    };
+    return date.toLocaleDateString('en-US', options);
+
+  }
 }

@@ -26,7 +26,7 @@ export interface Submission {
 })
 export class SubmissionsService {
   private _submissions = signal<Submission[]>([]);
-  private _typeOfView = signal<string>('list');
+  private _typeOfView = signal<string>('map');
   private filterValue = '';
   private statusValue = ''
   private dateValue = ''

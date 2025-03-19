@@ -46,4 +46,49 @@
       }
     }
   }
+  .past-due-date {
+    color: red;
+    font-weight: 500;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+}
+
+.map-view-card__container:hover {
+  cursor: pointer;
+  background: #f8f6f6;
+  border: 2px solid rgb(99, 113, 231);
+  border-radius: 4px;
+  padding: 8px 16px;
+  overflow: hidden;
+}
+
+@media (max-width: 1300px) {
+  .map-view-card__container {
+    grid-template-columns: repeat(12, 1fr);
+
+    &__heading {
+      &__name {
+        grid-column: span 6;
+      }
+      &__status {
+        grid-column: span 6;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .map-view-card__container {
+    grid-template-columns: repeat(12, 1fr);
+
+    &__heading {
+      &__name {
+        grid-column: span 12;
+      }
+      &__status {
+        grid-column: span 12;
+      }
+    }
+  }
 }
