@@ -35,6 +35,8 @@ export class ListViewComponent implements AfterViewInit {
   constructor() {
     effect(() => {
       this.dataSource = new MatTableDataSource(this.submissionService.submissions());
+      this.dataSource.paginator = this.paginator;
+
     })
   }
 
