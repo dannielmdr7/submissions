@@ -78,7 +78,7 @@ export const data:Submission[] = [
   },
   {
     "id": 6,
-    "task": "Delivery",
+    "task": "Delivers",
     "from": "Franklin White",
     "to": "Emma Davis",
     "address": "303 Cedar Ct",
@@ -126,7 +126,7 @@ export const data:Submission[] = [
   },
   {
     "id": 10,
-    "task": "Delivery",
+    "task": "Delivery in home",
     "from": "David Wilson",
     "to": "Franklin White",
     "address": "303 Cedar Ct",
@@ -198,14 +198,14 @@ export const data:Submission[] = [
   },
   {
     "id": 16,
-    "task": "Delivery",
+    "task": "Delivery in job",
     "from": "Bob Smith",
     "to": "Franklin White",
     "address": "303 Cedar Ct",
     "dueDate": "Dec 12 2025 08:45:00 GMT-0500",
     "latitude": 24.837291,
     "longitude": -77.485729,
-    "status": StatusEnum.LowRisk,
+    "status": StatusEnum.Uncomplete,
     "selected": true
   },
   {
@@ -270,7 +270,7 @@ export const data:Submission[] = [
   },
   {
     "id": 22,
-    "task": "Delivery",
+    "task": "Delivery tomorrow",
     "from": "David Wilson",
     "to": "Emma Davis",
     "address": "303 Cedar Ct",
